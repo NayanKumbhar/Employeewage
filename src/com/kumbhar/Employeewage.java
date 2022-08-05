@@ -4,6 +4,8 @@ public class Employeewage {
 
 	private static final int WAGE_PER_HR = 20;
 	private static final int FULL_DAY_HR = 8;
+	private static final int PART_TIME_HR = 4;
+	private static final int IS_FULL_TIME = 1;
 	private static int totalWage = 0;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,9 +16,18 @@ public class Employeewage {
 		
 		int check_attendance = (int)Math.floor(Math.random()*10)%2;
 		if(check_attendance==1) {
-			System.out.println("Employee is Present");
-			totalWage = WAGE_PER_HR*FULL_DAY_HR;
-			System.out.println("Total Wage per day is=" + totalWage);
+			
+			int IS_FULL_TIME = (int)Math.floor(Math.random()*10)%2;
+			if(IS_FULL_TIME==1) {
+				System.out.println("Employee is full time");
+				totalWage = WAGE_PER_HR*FULL_DAY_HR;
+				System.out.println("Total Wage per day is=" + totalWage);
+			}else {
+				System.out.println("Employee is part time");
+				totalWage = WAGE_PER_HR*PART_TIME_HR;
+				System.out.println("Total Wage Per day="+totalWage);
+			}
+			//uc-2-Employeedailywage
 		}else
 		{
 			System.out.println("Employee is absent");
